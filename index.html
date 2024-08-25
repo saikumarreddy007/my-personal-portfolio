@@ -49,14 +49,13 @@
         align-items: center;
         border-bottom-left-radius: 20%;
         border-bottom-right-radius: 20%;
-        /* box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125); */
         overflow: hidden;
     }
 
     .part3 {
         background-color: rgb(231, 230, 229);
         width: 100%;
-        height: 600px;
+        height: 500px;
     }
 
     .container-1 {
@@ -211,6 +210,7 @@
 
     footer {
         height: 200px;
+        background-color: rgb(231, 230, 229);
     }
 
 
@@ -287,6 +287,176 @@
 
         100% {
             transform: translateX(calc(-250px * 6));
+        }
+    }
+
+    .container {
+        width: 100%;
+        height: 50%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 150px));
+        grid-auto-rows: 150px;
+        grid-auto-flow: row dense;
+        grid-gap: 23px;
+        justify-content: center;
+        background-color: rgb(231, 230, 229);
+    }
+
+    .card-top,
+    .card-right,
+    .card-bottom,
+    .card-left {
+        display: flex;
+        flex-wrap: nowrap;
+        height: 100%;
+        width: 100%;
+        border-radius: 95.2380952381px;
+        box-shadow: 0px 3px 9px 1px rgba(0, 10, 20, 0.2);
+    }
+
+    .card-top {
+        flex-direction: column;
+        grid-column: auto/span 1;
+        grid-row: auto/span 2;
+    }
+
+    .card-right {
+        flex-direction: row-reverse;
+        grid-column: auto/span 2;
+        grid-row: auto/span 1;
+    }
+
+    .card-bottom {
+        flex-direction: column-reverse;
+        grid-column: auto/span 1;
+        grid-row: auto/span 2;
+    }
+
+    .card-left {
+        flex-direction: row;
+        grid-column: auto/span 2;
+        grid-row: auto/span 1;
+    }
+
+    .card-image {
+        display: flex;
+    }
+
+    .card-top .card-image,
+    .card-bottom .card-image {
+        height: 50%;
+        width: 100%;
+    }
+
+    .card-left .card-image,
+    .card-right .card-image {
+        height: 100%;
+        width: 50%;
+    }
+
+    .card-image img {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .card-top img {
+        border-radius: 95.2380952381px 95.2380952381px 0 0;
+    }
+
+    .card-right img {
+        border-radius: 0 95.2380952381px 95.2380952381px 0;
+    }
+
+    .card-bottom img {
+        border-radius: 0 0 95.2380952381px 95.2380952381px;
+    }
+
+    .card-left img {
+        border-radius: 95.2380952381px 0 0 95.2380952381px;
+    }
+
+    .card-text {
+        align-self: center;
+        padding: 23px;
+    }
+
+    .card-top .card-text {
+        height: auto;
+        width: auto;
+        padding-bottom: 36.8px;
+    }
+
+    .card-right .card-text {
+        height: auto;
+        width: 50%;
+        padding-left: 36.8px;
+    }
+
+    .card-bottom .card-text {
+        height: auto;
+        width: auto;
+        padding-top: 36.8px;
+    }
+
+    .card-left .card-text {
+        height: auto;
+        width: 50%;
+        padding-right: 36.8px;
+    }
+
+    .card-text p {
+        margin: 0;
+        line-height: 1.35em;
+        color: #334455;
+    }
+
+    @media (max-width: 500px) {
+        .card-top {
+            flex-direction: row;
+            grid-column: auto/span 2;
+            grid-row: auto/span 1;
+        }
+
+        .card-bottom {
+            flex-direction: row-reverse;
+            grid-column: auto/span 2;
+            grid-row: auto/span 1;
+        }
+
+        .card-top .card-image,
+        .card-bottom .card-image {
+            height: 100%;
+            width: 50%;
+        }
+
+        .card-top img {
+            border-radius: 95.2380952381px 0 0 95.2380952381px;
+        }
+
+        .card-bottom img {
+            border-radius: 0 95.2380952381px 95.2380952381px 0;
+        }
+
+        .card-top .card-text {
+            height: auto;
+            width: 50%;
+            padding-right: 36.8px;
+        }
+
+        .card-bottom .card-text {
+            height: auto;
+            width: 50%;
+            padding-left: 36.8px;
+        }
+    }
+
+    @media (max-width: 400px) {
+        .card-image {
+            width: 38% !important;
+        }
+
+        .card-text {
+            width: 62% !important;
         }
     }
 </style>
@@ -410,6 +580,153 @@
             </div>
         </div>
         <div class="part3">
+            <div class='container'>
+                <div class='card-left'>
+                    <div class='card-image'>
+                        <img
+                            src='https://t4.ftcdn.net/jpg/07/49/14/61/360_F_749146107_m8wCjtrauZyHYoNCkXZm8Qe4lmoTPi2F.jpg'>
+                    </div>
+                    <div class='card-text'>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class='card-top'>
+                    <div class='card-image'>
+                        <img
+                            src='https://t4.ftcdn.net/jpg/07/49/14/61/360_F_749146107_m8wCjtrauZyHYoNCkXZm8Qe4lmoTPi2F.jpg'>
+                    </div>
+                    <div class='card-text'>
+                        <p>Quisque cursus, metus vitae pharetra auctor.</p>
+                    </div>
+                </div>
+                <div class='card-right'>
+                    <div class='card-image'>
+                        <img
+                            src='https://t4.ftcdn.net/jpg/07/49/14/61/360_F_749146107_m8wCjtrauZyHYoNCkXZm8Qe4lmoTPi2F.jpg'>
+                    </div>
+                    <div class='card-text'>
+                        <p>Ut eu diam at pede suscipit sodales.</p>
+                    </div>
+                </div>
+                <div class='card-right'>
+                    <div class='card-image'>
+                        <img
+                            src='https://t4.ftcdn.net/jpg/07/49/14/61/360_F_749146107_m8wCjtrauZyHYoNCkXZm8Qe4lmoTPi2F.jpg'>
+                    </div>
+                    <div class='card-text'>
+                        <p>Donec lacus nunc, viverra nec, blandit vel, egestas et, augue.</p>
+                    </div>
+                </div>
+                <div class='card-top'>
+                    <div class='card-image'>
+                        <img
+                            src='https://t4.ftcdn.net/jpg/07/49/14/61/360_F_749146107_m8wCjtrauZyHYoNCkXZm8Qe4lmoTPi2F.jpg'>
+                    </div>
+                    <div class='card-text'>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-image'>
+                        <img
+                            src='https://t4.ftcdn.net/jpg/07/49/14/61/360_F_749146107_m8wCjtrauZyHYoNCkXZm8Qe4lmoTPi2F.jpg'>
+                    </div>
+                    <div class='card-text'>
+                        <p>Ut eu diam at pede suscipit sodales.</p>
+                    </div>
+                </div>
+                <div class='card-left'>
+                    <div class='card-image'>
+                        <img
+                            src='https://t4.ftcdn.net/jpg/07/49/14/61/360_F_749146107_m8wCjtrauZyHYoNCkXZm8Qe4lmoTPi2F.jpg'>
+                    </div>
+                    <div class='card-text'>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-image'>
+                        <img
+                            src='https://t4.ftcdn.net/jpg/07/49/14/61/360_F_749146107_m8wCjtrauZyHYoNCkXZm8Qe4lmoTPi2F.jpg'>
+                    </div>
+                    <div class='card-text'>
+                        <p>Quisque cursus, metus vitae pharetra auctor.</p>
+                    </div>
+                </div>
+                <div class='card-right'>
+                    <div class='card-image'>
+                        <img
+                            src='https://t4.ftcdn.net/jpg/07/49/14/61/360_F_749146107_m8wCjtrauZyHYoNCkXZm8Qe4lmoTPi2F.jpg'>
+                    </div>
+                    <div class='card-text'>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class='card-top'>
+                    <div class='card-image'>
+                        <img
+                            src='https://t4.ftcdn.net/jpg/07/49/14/61/360_F_749146107_m8wCjtrauZyHYoNCkXZm8Qe4lmoTPi2F.jpg'>
+                    </div>
+                    <div class='card-text'>
+                        <p>Integer lacinia sollicitudin massa. Cras metus.</p>
+                    </div>
+                </div>
+                <div class='card-left'>
+                    <div class='card-image'>
+                        <img
+                            src='https://t4.ftcdn.net/jpg/07/49/14/61/360_F_749146107_m8wCjtrauZyHYoNCkXZm8Qe4lmoTPi2F.jpg'>
+                    </div>
+                    <div class='card-text'>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class='card-left'>
+                    <div class='card-image'>
+                        <img
+                            src='https://t4.ftcdn.net/jpg/07/49/14/61/360_F_749146107_m8wCjtrauZyHYoNCkXZm8Qe4lmoTPi2F.jpg'>
+                    </div>
+                    <div class='card-text'>
+                        <p>Ut eu diam at pede suscipit sodales.</p>
+                    </div>
+                </div>
+                <div class='card-top'>
+                    <div class='card-image'>
+                        <img
+                            src='https://t4.ftcdn.net/jpg/07/49/14/61/360_F_749146107_m8wCjtrauZyHYoNCkXZm8Qe4lmoTPi2F.jpg'>
+                    </div>
+                    <div class='card-text'>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </div>
+                </div>
+                <div class='card-bottom'>
+                    <div class='card-image'>
+                        <img
+                            src='https://t4.ftcdn.net/jpg/07/49/14/61/360_F_749146107_m8wCjtrauZyHYoNCkXZm8Qe4lmoTPi2F.jpg'>
+                    </div>
+                    <div class='card-text'>
+                        <p>Quisque cursus, metus vitae pharetra auctor.</p>
+                    </div>
+                </div>
+                <div class='card-top'>
+                    <div class='card-image'>
+                        <img
+                            src='https://t4.ftcdn.net/jpg/07/49/14/61/360_F_749146107_m8wCjtrauZyHYoNCkXZm8Qe4lmoTPi2F.jpg'>
+                    </div>
+                    <div class='card-text'>
+                        <p>Donec lacus nunc, viverra nec, blandit vel, egestas et, augue.</p>
+                    </div>
+                </div>
+                <div class='card-right'>
+                    <div class='card-image'>
+                        <img
+                            src='https://t4.ftcdn.net/jpg/07/49/14/61/360_F_749146107_m8wCjtrauZyHYoNCkXZm8Qe4lmoTPi2F.jpg'>
+                    </div>
+                    <div class='card-text'>
+                        <p>Ut eu diam at pede suscipit sodales.</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </body>
